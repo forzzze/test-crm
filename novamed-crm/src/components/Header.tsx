@@ -1,6 +1,7 @@
 import { Bell, Menu, Search } from 'lucide-react'
 import { useState } from 'react'
 import type { Appointment, Period } from '../types'
+import { PatientCell } from './PatientCell'
 import { PeriodSelector } from './PeriodSelector'
 import { StatusBadge } from './StatusBadge'
 
@@ -28,7 +29,7 @@ export function Header({ period, onPeriodChange, search, onSearch, suggestions, 
         {showSuggestions && <div className="search-suggestions" id="patient-search-suggestions" aria-label="Результаты поиска пациентов">
           <div className="search-suggestions-head"><span>Пациент</span><span>Запись</span></div>
           {suggestions.length ? suggestions.slice(0, 5).map((appointment) => <button key={appointment.id} className="search-suggestion" onClick={(event) => { setSearchOpen(false); onSuggestionSelect(appointment, event.currentTarget) }}>
-            <span className="suggestion-patient"><span className="mini-avatar">{appointment.patient.split(' ').map((name) => name[0]).join('')}</span><span><strong>{appointment.patient}</strong><small>{appointment.service}</small></span></span>
+            <PatientCell appointment={appointment} size={30} />
             <span className="suggestion-meta"><strong>{appointment.time}</strong><small>{appointment.doctor}</small></span>
             <StatusBadge status={appointment.status} />
           </button>) : <div className="search-suggestions-empty"><strong>Ничего не найдено</strong><span>Попробуйте изменить запрос</span></div>}

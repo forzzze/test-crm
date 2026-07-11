@@ -1,8 +1,8 @@
-import { CalendarCheck2, Stethoscope, UserRoundPlus, WalletCards } from 'lucide-react'
+import { Banknote, CalendarCheck2, Stethoscope, UserRoundPlus } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import type { Metric } from '../types'
 
-const icons = { calendar: CalendarCheck2, patients: UserRoundPlus, doctors: Stethoscope, revenue: WalletCards }
+const icons = { calendar: CalendarCheck2, patients: UserRoundPlus, doctors: Stethoscope, revenue: Banknote }
 
 function parseMetricValue(value: string) {
   return Number(value.replace(/\s/g, '').replace('₽', '').replace(',', '.'))
@@ -14,7 +14,7 @@ function formatMetricValue(value: number, template: string) {
   return Math.round(value).toLocaleString('ru-RU')
 }
 
-export function MetricCard({ metric }: { metric: Metric }) {
+export function MetricCard({ metric, collapsed = false }: { metric: Metric; collapsed?: boolean }) {
   const Icon = icons[metric.icon]
   const numericValue = parseMetricValue(metric.value)
   const previousValue = useRef(numericValue)
@@ -45,7 +45,7 @@ export function MetricCard({ metric }: { metric: Metric }) {
     return () => cancelAnimationFrame(frame)
   }, [metric.value])
 
-  return <article className="metric-card">
+  return <article className={`metric-card ${collapsed ? 'metric-card--collapsed' : ''}`} aria-hidden={collapsed}>
     <div className="metric-top"><span>{metric.label}</span><span className={`metric-icon metric-icon--${metric.icon}`}><Icon size={18} strokeWidth={2.15} /></span></div>
     <div className="metric-bottom"><strong aria-label={metric.value}>{displayValue}</strong><span className={`delta delta--${metric.direction}`}>{metric.direction === 'up' ? '↗' : metric.direction === 'down' ? '↘' : '—'} {metric.delta}</span></div>
   </article>

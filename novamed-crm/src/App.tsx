@@ -1,4 +1,4 @@
-import { CalendarClock, CircleAlert, X } from 'lucide-react'
+import { CalendarClock, X } from 'lucide-react'
 import { useCallback, useMemo, useState } from 'react'
 import { AppShell } from './components/AppShell'
 import { AppointmentDrawer } from './components/AppointmentDrawer'
@@ -33,9 +33,11 @@ export function App() {
   const closeMenu = useCallback(() => setMenuOpen(false), [])
   const closeDrawer = useCallback(() => setDrawer(null), [])
   const current = periodData[period]
+  const doctorMetric = periodData.day.metrics.find((metric) => metric.id === 'doctors')!
+  const metricsForLayout = period === 'day' ? current.metrics : [current.metrics[0], current.metrics[1], doctorMetric, current.metrics[2]]
   const currentAppointments = appointmentPeriodData[period]
   const reminder = reminders[period]
-  const filtered = useMemo(() => currentAppointments.items.filter((appointment) => appointment.patient.toLowerCase().includes(search.trim().toLowerCase())), [currentAppointments, search])
+  const searchResults = useMemo(() => currentAppointments.items.filter((appointment) => appointment.patient.toLowerCase().includes(search.trim().toLowerCase())), [currentAppointments, search])
 
   const showToast = (message: string, duration = 2400) => {
     setToast(message)
@@ -54,15 +56,15 @@ export function App() {
   }
 
   return <AppShell active={activeNav} onNavigate={navigate}>
-    <Header period={period} onPeriodChange={setPeriod} search={search} onSearch={setSearch} suggestions={filtered} onSuggestionSelect={openAppointment} onMenu={() => setMenuOpen(true)} notificationOpen={notificationsOpen} onNotifications={() => setNotificationsOpen((value) => !value)} />
+    <Header period={period} onPeriodChange={setPeriod} search={search} onSearch={setSearch} suggestions={searchResults} onSuggestionSelect={openAppointment} onMenu={() => setMenuOpen(true)} notificationOpen={notificationsOpen} onNotifications={() => setNotificationsOpen((value) => !value)} />
     <NotificationsPanel open={notificationsOpen} onClose={() => setNotificationsOpen(false)} />
     <main className="dashboard">
-      <section className="metrics-grid" aria-label="Ключевые показатели">{current.metrics.map((metric) => <MetricCard key={metric.id} metric={metric} />)}</section>
+      <section className={`metrics-grid metrics-grid--${current.metrics.length}`} aria-label="Ключевые показатели">{metricsForLayout.map((metric) => <MetricCard key={metric.id} metric={metric} collapsed={period !== 'day' && metric.id === 'doctors'} />)}</section>
       <section className="analytics-grid"><VisitsChart data={current.visits} label={current.visitsLabel} average={current.average} /><DepartmentChart period={period} /></section>
       <section className="lower-grid">
         <section className="surface appointments-card">
-          <div className="section-heading"><div><h2>{currentAppointments.title}</h2><p>{search ? `Найдено: ${filtered.length}` : currentAppointments.subtitle}</p></div><button className="text-button" onClick={() => { setSearch(''); showToast(`Показаны все записи: ${currentAppointments.title.toLowerCase()}`) }}>Все записи</button></div>
-          {filtered.length ? <><AppointmentsTable appointments={filtered} onSelect={openAppointment} /><AppointmentMobileList appointments={filtered} onSelect={openAppointment} /></> : <div className="empty-state"><CircleAlert size={22} /><strong>Пациент не найден</strong><span>Проверьте написание имени или очистите поиск.</span><button className="text-button" onClick={() => setSearch('')}>Очистить поиск</button></div>}
+          <div className="section-heading"><div><h2>{currentAppointments.title}</h2><p>{currentAppointments.subtitle}</p></div><button className="text-button" onClick={() => { setSearch(''); showToast(`Показаны все записи: ${currentAppointments.title.toLowerCase()}`) }}>Все записи</button></div>
+          <AppointmentsTable appointments={currentAppointments.items} onSelect={openAppointment} /><AppointmentMobileList appointments={currentAppointments.items} onSelect={openAppointment} />
         </section>
         <div className="right-column">
           <DoctorsLoad period={period} />
