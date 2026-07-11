@@ -32,11 +32,11 @@ export const appointments: Appointment[] = [
 ]
 
 export const departments: Department[] = [
-  { name: 'Терапия', value: 35, color: '#168C86' }, { name: 'Стоматология', value: 25, color: '#527A9F' }, { name: 'Кардиология', value: 18, color: '#8A70A5' }, { name: 'Диагностика', value: 14, color: '#D39A56' }, { name: 'Другие', value: 8, color: '#A7B1B8' },
+  { name: 'Терапия', value: 35, color: '#3568E8' }, { name: 'Стоматология', value: 25, color: '#6689D8' }, { name: 'Кардиология', value: 18, color: '#8A70A5' }, { name: 'Диагностика', value: 14, color: '#D39A56' }, { name: 'Другие', value: 8, color: '#A7B1B8' },
 ]
 
 export const doctors: Doctor[] = [
-  { name: 'Алексей Орлов', specialty: 'Терапевт', appointments: 8, load: 80, initials: 'АО', tone: '#DDEFEA' },
+  { name: 'Алексей Орлов', specialty: 'Терапевт', appointments: 8, load: 80, initials: 'АО', tone: '#E4EAFC' },
   { name: 'Елена Соколова', specialty: 'Врач УЗИ', appointments: 6, load: 60, initials: 'ЕС', tone: '#E3EBF3' },
   { name: 'Ирина Новикова', specialty: 'Кардиолог', appointments: 9, load: 90, initials: 'ИН', tone: '#EEE7F3' },
 ]
