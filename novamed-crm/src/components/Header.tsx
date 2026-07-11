@@ -1,9 +1,10 @@
 import { Bell, Menu, Search } from 'lucide-react'
 import { useState } from 'react'
-import type { Appointment, Period } from '../types'
+import type { Appointment, Period, Theme } from '../types'
 import { PatientCell } from './PatientCell'
 import { PeriodSelector } from './PeriodSelector'
 import { StatusBadge } from './StatusBadge'
+import { ThemeToggle } from './ThemeToggle'
 
 interface Props {
   period: Period
@@ -15,9 +16,11 @@ interface Props {
   onMenu: () => void
   onNotifications: () => void
   notificationOpen: boolean
+  theme: Theme
+  onThemeChange: (theme: Theme) => void
 }
 
-export function Header({ period, onPeriodChange, search, onSearch, suggestions, onSuggestionSelect, onMenu, onNotifications, notificationOpen }: Props) {
+export function Header({ period, onPeriodChange, search, onSearch, suggestions, onSuggestionSelect, onMenu, onNotifications, notificationOpen, theme, onThemeChange }: Props) {
   const [searchOpen, setSearchOpen] = useState(false)
   const showSuggestions = searchOpen && search.trim().length > 0
 
@@ -37,6 +40,7 @@ export function Header({ period, onPeriodChange, search, onSearch, suggestions, 
       </div>
       <PeriodSelector value={period} onChange={onPeriodChange} />
       <div className="notification-anchor"><button className={`icon-button notification-button ${notificationOpen ? 'is-active' : ''}`} onClick={onNotifications} aria-label="Уведомления, 2 новых" aria-expanded={notificationOpen}><Bell size={19} /><span>2</span></button></div>
+      <ThemeToggle theme={theme} onChange={onThemeChange} />
       <button className="profile-button" aria-label="Профиль Марины Волковой"><span className="profile-avatar">МВ</span><span className="profile-copy"><strong>Марина Волкова</strong><small>Администратор</small></span></button>
     </div>
   </header>

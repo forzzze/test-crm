@@ -1,5 +1,5 @@
 import { CalendarClock, X } from 'lucide-react'
-import { useCallback, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { AppShell } from './components/AppShell'
 import { AppointmentDrawer } from './components/AppointmentDrawer'
 import { AppointmentMobileList } from './components/AppointmentMobileList'
@@ -12,7 +12,7 @@ import { MobileNavigation } from './components/MobileNavigation'
 import { NotificationsPanel } from './components/NotificationsPanel'
 import { VisitsChart } from './components/VisitsChart'
 import { appointmentPeriodData, periodData } from './data/mockData'
-import type { Appointment, Period } from './types'
+import type { Appointment, Period, Theme } from './types'
 
 const reminders: Record<Period, { label: string; time: string; detail: string }> = {
   day: { label: 'Ближайшее окно', time: 'Сегодня, 13:30–14:00', detail: 'Кабинет УЗИ · Елена Соколова' },
@@ -29,6 +29,12 @@ export function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [notificationsOpen, setNotificationsOpen] = useState(false)
   const [toast, setToast] = useState<string | null>(null)
+  const [theme, setTheme] = useState<Theme>(() => localStorage.getItem('novamed-theme') === 'dark' ? 'dark' : 'light')
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme
+    localStorage.setItem('novamed-theme', theme)
+  }, [theme])
 
   const closeMenu = useCallback(() => setMenuOpen(false), [])
   const closeDrawer = useCallback(() => setDrawer(null), [])
@@ -56,7 +62,7 @@ export function App() {
   }
 
   return <AppShell active={activeNav} onNavigate={navigate}>
-    <Header period={period} onPeriodChange={setPeriod} search={search} onSearch={setSearch} suggestions={searchResults} onSuggestionSelect={openAppointment} onMenu={() => setMenuOpen(true)} notificationOpen={notificationsOpen} onNotifications={() => setNotificationsOpen((value) => !value)} />
+    <Header period={period} onPeriodChange={setPeriod} search={search} onSearch={setSearch} suggestions={searchResults} onSuggestionSelect={openAppointment} onMenu={() => setMenuOpen(true)} notificationOpen={notificationsOpen} onNotifications={() => setNotificationsOpen((value) => !value)} theme={theme} onThemeChange={setTheme} />
     <NotificationsPanel open={notificationsOpen} onClose={() => setNotificationsOpen(false)} />
     <main className="dashboard">
       <section className={`metrics-grid metrics-grid--${current.metrics.length}`} aria-label="Ключевые показатели">{metricsForLayout.map((metric) => <MetricCard key={metric.id} metric={metric} collapsed={period !== 'day' && metric.id === 'doctors'} />)}</section>

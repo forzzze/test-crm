@@ -70,6 +70,8 @@ button:focus-visible, input:focus-visible, a:focus-visible { outline: 2px solid 
 .profile-copy { display: flex; flex-direction: column; align-items: flex-start; white-space: nowrap; }
 .profile-copy strong { font-size: 10.5px; }
 .profile-copy small { margin-top: 2px; color: var(--muted); font-size: 8.5px; }
+.theme-toggle { position: relative; width: 64px; height: 34px; padding: 3px; display: grid; grid-template-columns: 1fr 1fr; align-items: center; border: 1px solid var(--border); border-radius: 8px; background: #edf2f4; color: #839099; cursor: pointer; transition: border-color .18s, background .18s; }
+.theme-icon { position: relative; z-index: 2; display: grid; place-items: center; pointer-events: none; }.theme-icon--on { color: #d49735; }.theme-toggle-thumb { position: absolute; top: 3px; left: 3px; z-index: 1; width: 27px; height: 26px; border-radius: 6px; background: #fff; box-shadow: 0 1px 4px rgba(28,43,50,.14); transform: translateX(30px); transition: transform .22s cubic-bezier(.22,.7,.25,1), background .18s; }.theme-toggle[aria-checked='true'] .theme-toggle-thumb { transform: translateX(0); }.theme-toggle[aria-checked='true'] .theme-icon--off { color: #51b8ad; }
 .mobile-menu-button { display: none; margin-right: 10px; }
 .dashboard { width: 100%; max-width: 1480px; margin: 0 auto; padding: 20px 28px 32px; }
 .metrics-grid { display: flex; gap: 0; overflow: hidden; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow); }
@@ -154,6 +156,63 @@ button:focus-visible, input:focus-visible, a:focus-visible { outline: 2px solid 
 @keyframes slideLeft { from { transform: translateX(100%); } } @keyframes slideRight { from { transform: translateX(-100%); } } @keyframes toastIn { from { opacity: 0; transform: translate(-50%, 10px); } }
 @keyframes suggestionsIn { from { opacity: 0; transform: translateY(-4px); } }
 
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #151b1d; --surface: #1d2527; --surface-soft: #222c2e; --text: #edf4f3; --muted: #96a6a6; --faint: #788888; --border: #303c3e;
+  --accent: #2aa89c; --accent-dark: #59c9bd; --accent-soft: #203b39; --blue: #4faea6; --success: #66c493; --amber: #c49a58; --red: #d07b7d;
+}
+[data-theme='dark'] body { background: var(--bg); color: var(--text); }
+[data-theme='dark'] .sidebar { background: #182022; }
+[data-theme='dark'] .header { background: rgba(21,27,29,.94); }
+[data-theme='dark'] .brand-mark { background: var(--accent); }
+[data-theme='dark'] .nav-item:hover { background: #222c2e; color: var(--text); }
+[data-theme='dark'] .system-status, [data-theme='dark'] .search, [data-theme='dark'] .icon-button, [data-theme='dark'] .surface, [data-theme='dark'] .metrics-grid, [data-theme='dark'] .notifications, [data-theme='dark'] .search-suggestions, [data-theme='dark'] .appointment-drawer, [data-theme='dark'] .appointment-mobile-card { background: var(--surface); }
+[data-theme='dark'] .search:focus-within { border-color: #497c78; box-shadow: 0 0 0 3px rgba(42,168,156,.12); }
+[data-theme='dark'] .period-selector, [data-theme='dark'] .theme-toggle { background: #202a2c; }
+[data-theme='dark'] .period-selector button.is-active, [data-theme='dark'] .theme-toggle-thumb { background: #344143; color: var(--text); }
+[data-theme='dark'] .theme-icon--on { color: #efbd62; }
+[data-theme='dark'] .profile-button:hover { background: #20292b; }
+[data-theme='dark'] .profile-avatar { background: #27403e; color: #74d4ca; }
+[data-theme='dark'] .metric-icon, [data-theme='dark'] .metric-icon--patients, [data-theme='dark'] .metric-icon--doctors, [data-theme='dark'] .metric-icon--revenue { border-color: #35514f; background: #233432; color: #55c7bb; box-shadow: 0 3px 10px rgba(0,0,0,.13); }
+[data-theme='dark'] .metric-top > span:first-child, [data-theme='dark'] .patient-copy strong, [data-theme='dark'] .suggestion-patient strong, [data-theme='dark'] .suggestion-meta strong { color: var(--text); }
+[data-theme='dark'] .delta { border-color: #335f4b; background: #203b31; color: #6bd09a; }
+[data-theme='dark'] .delta--neutral { border-color: #3a4648; background: #293234; color: #a0adad; }
+[data-theme='dark'] .appointments-table th, [data-theme='dark'] .search-suggestions-head { background: #20282a; color: #829292; }
+[data-theme='dark'] .appointments-table td { color: #a8b5b5; }
+[data-theme='dark'] .appointments-table tbody tr:hover, [data-theme='dark'] .search-suggestion:hover, [data-theme='dark'] .search-suggestion:focus-visible, [data-theme='dark'] .notification-item:hover { background: #222d2f; }
+[data-theme='dark'] .search-suggestion { background: var(--surface); }
+[data-theme='dark'] .avatar, [data-theme='dark'] .mini-avatar { background: #2a383a; color: #a8b9b8; }
+[data-theme='dark'] .status--confirmed { background: #203b31; color: #72cfa0; }
+[data-theme='dark'] .status--waiting { background: #3d3323; color: #dfb86f; }
+[data-theme='dark'] .status--arrived { background: #233840; color: #7cb7ce; }
+[data-theme='dark'] .status--cancelled { background: #42292b; color: #dc8b8e; }
+[data-theme='dark'] .legend li, [data-theme='dark'] .doctor-row, [data-theme='dark'] .appointments-table td, [data-theme='dark'] .appointments-table th, [data-theme='dark'] .notification-item, [data-theme='dark'] .details-list > div { border-color: #2c3739; }
+[data-theme='dark'] .chart-switch { border-color: #385653; background: #223431; color: #73c8bf; }
+[data-theme='dark'] .chart-switch:hover { border-color: #4f817c; background: #27413e; color: #8bdacf; }
+[data-theme='dark'] .chart-tooltip { border-color: #3b494b; background: #20292b; color: var(--text); }
+[data-theme='dark'] .recharts-cartesian-grid line { stroke: #2d383a; }
+[data-theme='dark'] .visits-chart [fill='#E3E7EC'] { fill: #344144; }
+[data-theme='dark'] .visits-chart [fill='#3568E8'] { fill: #2aa89c; }
+[data-theme='dark'] .visits-chart [stroke='#3568E8'] { stroke: #35b6aa; }
+[data-theme='dark'] .donut-wrap [fill='#3568E8'] { fill: #2aa89c; }
+[data-theme='dark'] .donut-wrap [fill='#6689D8'] { fill: #438f89; }
+[data-theme='dark'] .donut-wrap [fill='#8A70A5'] { fill: #527671; }
+[data-theme='dark'] .donut-wrap [fill='#D39A56'] { fill: #6c8d77; }
+[data-theme='dark'] .donut-wrap [fill='#A7B1B8'] { fill: #526264; }
+[data-theme='dark'] .doctor-avatar { color: #314746; }
+[data-theme='dark'] .progress { background: #303b3d; }
+[data-theme='dark'] .reminder-card { border-color: #304744; background: #1d302e; }
+[data-theme='dark'] .reminder-icon, [data-theme='dark'] .reminder-card button { border-color: #3b5f5a; background: #243a37; color: #71cbc1; }
+[data-theme='dark'] .notice-icon, [data-theme='dark'] .notifications-all { background: #243a37; color: #68c7bd; }
+[data-theme='dark'] .drawer-status { background: #20292b; }
+[data-theme='dark'] .drawer-avatar { background: #29403e; color: #7bd3c9; }
+[data-theme='dark'] .note { border-color: #3d756f; background: #203331; }
+[data-theme='dark'] .button--secondary { border-color: var(--border); background: #222b2d; color: var(--text); }
+[data-theme='dark'] .button--secondary:hover { background: #293436; }
+[data-theme='dark'] .overlay { background: rgba(4,8,9,.62); }
+
+body, .sidebar, .header, .surface, .metrics-grid, .search, .icon-button, .period-selector, .appointment-drawer, .appointment-mobile-card { transition-property: background-color, border-color, color; transition-duration: .2s; transition-timing-function: ease; }
+
 @media (max-width: 1120px) {
   .profile-copy { display: none; }.search-wrap { width: 170px; }.dashboard, .header { padding-left: 20px; padding-right: 20px; }.metric-bottom strong { font-size: 21px; }.appointments-table th:nth-child(4), .appointments-table td:nth-child(4) { display: none; }.appointments-table th:nth-child(3) { width: 28%; }.appointments-table th:nth-child(5) { width: 23%; }
 }
@@ -171,6 +230,7 @@ button:focus-visible, input:focus-visible, a:focus-visible { outline: 2px solid 
 }
 @media (max-width: 560px) {
   .search-wrap { order: 2; width: 100%; }
+  .theme-toggle { position: absolute; top: 14px; right: 60px; }
   .header:has(.search-suggestions) .period-selector { visibility: hidden; }
   .search-suggestions { width: 100%; }
   .search-suggestions-head { grid-template-columns: 1fr 82px; }

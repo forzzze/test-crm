@@ -1,4 +1,5 @@
 export type Period = 'day' | 'week' | 'month'
+export type Theme = 'light' | 'dark'
 export type AppointmentStatus = 'confirmed' | 'waiting' | 'arrived' | 'cancelled'
 
 export interface Metric { id: string; label: string; value: string; delta: string; direction: 'up' | 'down' | 'neutral'; icon: 'calendar' | 'patients' | 'doctors' | 'revenue' }
