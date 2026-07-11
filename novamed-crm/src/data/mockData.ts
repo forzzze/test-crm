@@ -1,4 +1,4 @@
-import type { Appointment, Department, Doctor, Period, PeriodData } from '../types'
+import type { Appointment, AppointmentPeriodData, DepartmentPeriodData, DoctorPeriodData, Period, PeriodData } from '../types'
 
 const baseMetrics = [
   { id: 'appointments', label: 'Записей сегодня', value: '24', delta: '+12%', direction: 'up' as const, icon: 'calendar' as const },
@@ -31,12 +31,48 @@ export const appointments: Appointment[] = [
   { id: 5, time: '16:00', patient: 'Мария Павлова', service: 'Кардиология', doctor: 'Ирина Новикова', status: 'cancelled', phone: '+7 (904) 567-89-01', note: 'Отменила по телефону. Предложить новую дату на следующей неделе.' },
 ]
 
-export const departments: Department[] = [
-  { name: 'Терапия', value: 35, color: '#3568E8' }, { name: 'Стоматология', value: 25, color: '#6689D8' }, { name: 'Кардиология', value: 18, color: '#8A70A5' }, { name: 'Диагностика', value: 14, color: '#D39A56' }, { name: 'Другие', value: 8, color: '#A7B1B8' },
-]
+export const appointmentPeriodData: Record<Period, AppointmentPeriodData> = {
+  day: { title: 'Записи на сегодня', subtitle: '5 ближайших визитов', items: appointments },
+  week: { title: 'Записи за неделю', subtitle: 'Последние 5 визитов из 257', items: [
+    { id: 11, time: 'Пн, 09:00', patient: 'София Белова', service: 'Терапия', doctor: 'Алексей Орлов', status: 'confirmed', phone: '+7 (905) 112-34-56', note: 'Повторная консультация по результатам обследования.' },
+    { id: 12, time: 'Вт, 11:20', patient: 'Артём Егоров', service: 'УЗИ', doctor: 'Елена Соколова', status: 'arrived', phone: '+7 (906) 223-45-67', note: 'Исследование проведено, заключение передано пациенту.' },
+    { id: 13, time: 'Ср, 15:10', patient: 'Вера Фёдорова', service: 'Кардиология', doctor: 'Ирина Новикова', status: 'confirmed', phone: '+7 (907) 334-56-78', note: 'Контроль показателей после корректировки терапии.' },
+    { id: 14, time: 'Пт, 10:40', patient: 'Роман Захаров', service: 'Диагностика', doctor: 'Дмитрий Лебедев', status: 'waiting', phone: '+7 (908) 445-67-89', note: 'Ожидается подтверждение дополнительных исследований.' },
+    { id: 15, time: 'Сб, 13:30', patient: 'Алёна Громова', service: 'Первичный приём', doctor: 'Алексей Орлов', status: 'cancelled', phone: '+7 (909) 556-78-90', note: 'Пациент попросил перенести запись на следующую неделю.' },
+  ] },
+  month: { title: 'Записи за месяц', subtitle: 'Последние 5 визитов из 1 084', items: [
+    { id: 21, time: '03 июл, 12:00', patient: 'Кирилл Андреев', service: 'Стоматология', doctor: 'Мария Лазарева', status: 'confirmed', phone: '+7 (910) 667-89-01', note: 'Плановый осмотр и составление плана лечения.' },
+    { id: 22, time: '07 июл, 09:30', patient: 'Нина Тихонова', service: 'Терапия', doctor: 'Алексей Орлов', status: 'arrived', phone: '+7 (911) 778-90-12', note: 'Визит завершён, назначен контроль через месяц.' },
+    { id: 23, time: '11 июл, 14:20', patient: 'Павел Сорокин', service: 'Кардиология', doctor: 'Ирина Новикова', status: 'waiting', phone: '+7 (912) 889-01-23', note: 'Необходимо подтвердить результаты суточного мониторинга.' },
+    { id: 24, time: '18 июл, 16:10', patient: 'Лидия Мельникова', service: 'УЗИ', doctor: 'Елена Соколова', status: 'confirmed', phone: '+7 (913) 990-12-34', note: 'Плановое диагностическое исследование.' },
+    { id: 25, time: '26 июл, 11:00', patient: 'Денис Комаров', service: 'Повторный приём', doctor: 'Дмитрий Лебедев', status: 'cancelled', phone: '+7 (914) 101-23-45', note: 'Запись отменена через личный кабинет.' },
+  ] },
+}
 
-export const doctors: Doctor[] = [
-  { name: 'Алексей Орлов', specialty: 'Терапевт', appointments: 8, load: 80, initials: 'АО', tone: '#E4EAFC' },
-  { name: 'Елена Соколова', specialty: 'Врач УЗИ', appointments: 6, load: 60, initials: 'ЕС', tone: '#E3EBF3' },
-  { name: 'Ирина Новикова', specialty: 'Кардиолог', appointments: 9, load: 90, initials: 'ИН', tone: '#EEE7F3' },
-]
+const departmentColors = ['#3568E8', '#6689D8', '#8A70A5', '#D39A56', '#A7B1B8']
+const departmentNames = ['Терапия', 'Стоматология', 'Кардиология', 'Диагностика', 'Другие']
+const makeDepartments = (values: number[]) => departmentNames.map((name, index) => ({ name, value: values[index], color: departmentColors[index] }))
+
+export const departmentPeriodData: Record<Period, DepartmentPeriodData> = {
+  day: { total: 24, subtitle: 'Структура записей сегодня', items: makeDepartments([35, 25, 18, 14, 8]) },
+  week: { total: 257, subtitle: 'Структура записей за неделю', items: makeDepartments([32, 27, 19, 15, 7]) },
+  month: { total: 1084, subtitle: 'Структура записей за месяц', items: makeDepartments([30, 26, 20, 16, 8]) },
+}
+
+export const doctorPeriodData: Record<Period, DoctorPeriodData> = {
+  day: { subtitle: 'Текущая смена · 12 специалистов', items: [
+    { name: 'Алексей Орлов', specialty: 'Терапевт', appointments: 8, load: 80, initials: 'АО', tone: '#E4EAFC' },
+    { name: 'Елена Соколова', specialty: 'Врач УЗИ', appointments: 6, load: 60, initials: 'ЕС', tone: '#E3EBF3' },
+    { name: 'Ирина Новикова', specialty: 'Кардиолог', appointments: 9, load: 90, initials: 'ИН', tone: '#EEE7F3' },
+  ] },
+  week: { subtitle: 'Средняя загрузка за неделю', items: [
+    { name: 'Алексей Орлов', specialty: 'Терапевт', appointments: 42, load: 84, initials: 'АО', tone: '#E4EAFC' },
+    { name: 'Елена Соколова', specialty: 'Врач УЗИ', appointments: 31, load: 72, initials: 'ЕС', tone: '#E3EBF3' },
+    { name: 'Ирина Новикова', specialty: 'Кардиолог', appointments: 38, load: 88, initials: 'ИН', tone: '#EEE7F3' },
+  ] },
+  month: { subtitle: 'Средняя загрузка за месяц', items: [
+    { name: 'Алексей Орлов', specialty: 'Терапевт', appointments: 174, load: 87, initials: 'АО', tone: '#E4EAFC' },
+    { name: 'Елена Соколова', specialty: 'Врач УЗИ', appointments: 128, load: 74, initials: 'ЕС', tone: '#E3EBF3' },
+    { name: 'Ирина Новикова', specialty: 'Кардиолог', appointments: 156, load: 92, initials: 'ИН', tone: '#EEE7F3' },
+  ] },
+}
