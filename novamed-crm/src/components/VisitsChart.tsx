@@ -14,6 +14,7 @@ export function VisitsChart({ data, label }: { data: VisitPoint[]; label: string
   const [mode, setMode] = useState<ChartMode>('bars')
   const maximum = Math.max(...data.map((point) => point.value))
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  const isMobile = window.matchMedia('(max-width: 560px)').matches
   const nextMode = mode === 'bars' ? 'line' : 'bars'
 
   const axes = <>
@@ -35,7 +36,7 @@ export function VisitsChart({ data, label }: { data: VisitPoint[]; label: string
       <ResponsiveContainer width="100%" height="100%">
         {mode === 'bars' ? <BarChart key={`bars-${label}`} data={data} margin={{ top: 17, right: 8, left: -24, bottom: 0 }} barCategoryGap="18%" accessibilityLayer={false}>
           {axes}
-          <Bar dataKey="value" radius={[10, 10, 5, 5]} maxBarSize={70} isAnimationActive={!reduceMotion} animationBegin={0} animationDuration={520} animationEasing="ease-out">
+          <Bar dataKey="value" radius={isMobile ? [6, 6, 3, 3] : [10, 10, 5, 5]} maxBarSize={70} isAnimationActive={!reduceMotion} animationBegin={0} animationDuration={520} animationEasing="ease-out">
             {data.map((point) => <Cell key={`${label}-${point.label}`} fill={point.value === maximum ? '#3568E8' : '#BCC5CD'} />)}
           </Bar>
         </BarChart> : <AreaChart key={`line-${label}`} data={data} margin={{ top: 17, right: 8, left: -24, bottom: 0 }} accessibilityLayer={false}>

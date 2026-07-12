@@ -9,3 +9,5 @@ When implementing from a selected generated mock, treat that image as the source
 Keep light-theme block borders and inactive chart columns visibly distinct in Chrome on Windows; avoid near-white strokes and fills that disappear on common displays or at non-default browser zoom.
 
 Keep the top metric-card labels centered, bold, and visually prominent while preserving the established number sizing and layout.
+
+The administrator avatar/name control must open a responsive profile card on both desktop and mobile.

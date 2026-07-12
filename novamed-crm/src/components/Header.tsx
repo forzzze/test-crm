@@ -6,9 +6,9 @@ import { PeriodSelector } from './PeriodSelector'
 import { StatusBadge } from './StatusBadge'
 import { ThemeToggle } from './ThemeToggle'
 
-interface Props { period: Period; onPeriodChange: (period: Period) => void; search: string; onSearch: (value: string) => void; suggestions: Appointment[]; onSuggestionSelect: (appointment: Appointment, element: HTMLButtonElement) => void; onMenu: () => void; onNotifications: () => void; notificationOpen: boolean; theme: Theme; onThemeChange: (theme: Theme) => void }
+interface Props { period: Period; onPeriodChange: (period: Period) => void; search: string; onSearch: (value: string) => void; suggestions: Appointment[]; onSuggestionSelect: (appointment: Appointment, element: HTMLButtonElement) => void; onMenu: () => void; onNotifications: () => void; notificationOpen: boolean; onProfile: () => void; profileOpen: boolean; theme: Theme; onThemeChange: (theme: Theme) => void }
 
-export function Header({ period, onPeriodChange, search, onSearch, suggestions, onSuggestionSelect, onMenu, onNotifications, notificationOpen, theme, onThemeChange }: Props) {
+export function Header({ period, onPeriodChange, search, onSearch, suggestions, onSuggestionSelect, onMenu, onNotifications, notificationOpen, onProfile, profileOpen, theme, onThemeChange }: Props) {
   const [searchOpen, setSearchOpen] = useState(false)
   const [mobileSearchOpen, setMobileSearchOpen] = useState(false)
   const searchInputRef = useRef<HTMLInputElement>(null)
@@ -23,7 +23,7 @@ export function Header({ period, onPeriodChange, search, onSearch, suggestions, 
       <div className="header-right-tools"><PeriodSelector value={period} onChange={onPeriodChange} /><ThemeToggle theme={theme} onChange={onThemeChange} /></div>
       <button className={`icon-button mobile-search-trigger ${mobileSearchOpen ? 'is-active' : ''}`} onClick={() => setMobileSearchOpen((value) => !value)} aria-label={mobileSearchOpen ? 'Закрыть поиск' : 'Открыть поиск'} aria-expanded={mobileSearchOpen}><Search size={19} /></button>
       <button className={`icon-button notification-button ${notificationOpen ? 'is-active' : ''}`} onClick={onNotifications} aria-label="Уведомления, 2 новых" aria-expanded={notificationOpen}><Bell size={19} /><span>2</span></button>
-      <button className="profile-button" aria-label="Профиль Марины Волковой"><span className="profile-avatar">МВ</span><span className="profile-copy"><strong>Марина Волкова</strong><small>Администратор</small></span></button>
+      <button className={`profile-button ${profileOpen ? 'is-active' : ''}`} onClick={onProfile} aria-label="Открыть профиль Марины Волковой" aria-expanded={profileOpen}><span className="profile-avatar">МВ</span><span className="profile-copy"><strong>Марина Волкова</strong><small>Администратор</small></span></button>
     </div>{mobileSearchOpen && <button className="mobile-search-overlay" onClick={closeSearch} aria-label="Закрыть поиск по клику вне поля" />}
   </header>
 }

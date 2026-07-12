@@ -4,6 +4,7 @@ import { AppShell } from './components/AppShell'
 import { AppointmentDrawer } from './components/AppointmentDrawer'
 import { AppointmentMobileList } from './components/AppointmentMobileList'
 import { AppointmentsTable } from './components/AppointmentsTable'
+import { AdminProfilePanel } from './components/AdminProfilePanel'
 import { DepartmentChart } from './components/DepartmentChart'
 import { DoctorsLoad } from './components/DoctorsLoad'
 import { Header } from './components/Header'
@@ -28,6 +29,7 @@ export function App() {
   const [returnFocus, setReturnFocus] = useState<HTMLElement | null>(null)
   const [menuOpen, setMenuOpen] = useState(false)
   const [notificationsOpen, setNotificationsOpen] = useState(false)
+  const [profileOpen, setProfileOpen] = useState(false)
   const [toast, setToast] = useState<string | null>(null)
   const [theme, setTheme] = useState<Theme>(() => localStorage.getItem('novamed-theme') === 'dark' ? 'dark' : 'light')
   const [appointmentsExpanded, setAppointmentsExpanded] = useState(() => !window.matchMedia('(max-width: 560px)').matches)
@@ -63,8 +65,9 @@ export function App() {
   }
 
   return <AppShell active={activeNav} onNavigate={navigate}>
-    <Header period={period} onPeriodChange={setPeriod} search={search} onSearch={setSearch} suggestions={searchResults} onSuggestionSelect={openAppointment} onMenu={() => setMenuOpen(true)} notificationOpen={notificationsOpen} onNotifications={() => setNotificationsOpen((value) => !value)} theme={theme} onThemeChange={setTheme} />
+    <Header period={period} onPeriodChange={setPeriod} search={search} onSearch={setSearch} suggestions={searchResults} onSuggestionSelect={openAppointment} onMenu={() => setMenuOpen(true)} notificationOpen={notificationsOpen} onNotifications={() => { setProfileOpen(false); setNotificationsOpen((value) => !value) }} profileOpen={profileOpen} onProfile={() => { setNotificationsOpen(false); setProfileOpen((value) => !value) }} theme={theme} onThemeChange={setTheme} />
     <NotificationsPanel open={notificationsOpen} onClose={() => setNotificationsOpen(false)} />
+    <AdminProfilePanel open={profileOpen} onClose={() => setProfileOpen(false)} />
     <main className="dashboard">
       <section className={`metrics-grid metrics-grid--${current.metrics.length}`} aria-label="Ключевые показатели">{metricsForLayout.map((metric) => <MetricCard key={metric.id} metric={metric} collapsed={period !== 'day' && metric.id === 'doctors'} />)}</section>
       <section className="analytics-grid"><VisitsChart data={current.visits} label={current.visitsLabel} average={current.average} /><DepartmentChart period={period} theme={theme} /></section>
