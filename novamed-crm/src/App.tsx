@@ -1,4 +1,4 @@
-import { CalendarClock, X } from 'lucide-react'
+import { CalendarClock, ChevronDown, ChevronUp, X } from 'lucide-react'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { AppShell } from './components/AppShell'
 import { AppointmentDrawer } from './components/AppointmentDrawer'
@@ -30,6 +30,7 @@ export function App() {
   const [notificationsOpen, setNotificationsOpen] = useState(false)
   const [toast, setToast] = useState<string | null>(null)
   const [theme, setTheme] = useState<Theme>(() => localStorage.getItem('novamed-theme') === 'dark' ? 'dark' : 'light')
+  const [appointmentsExpanded, setAppointmentsExpanded] = useState(true)
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme
@@ -65,12 +66,13 @@ export function App() {
     <Header period={period} onPeriodChange={setPeriod} search={search} onSearch={setSearch} suggestions={searchResults} onSuggestionSelect={openAppointment} onMenu={() => setMenuOpen(true)} notificationOpen={notificationsOpen} onNotifications={() => setNotificationsOpen((value) => !value)} theme={theme} onThemeChange={setTheme} />
     <NotificationsPanel open={notificationsOpen} onClose={() => setNotificationsOpen(false)} />
     <main className="dashboard">
+      <h1 className="sr-only">Обзор клиники NovaMed</h1>
       <section className={`metrics-grid metrics-grid--${current.metrics.length}`} aria-label="Ключевые показатели">{metricsForLayout.map((metric) => <MetricCard key={metric.id} metric={metric} collapsed={period !== 'day' && metric.id === 'doctors'} />)}</section>
-      <section className="analytics-grid"><VisitsChart data={current.visits} label={current.visitsLabel} average={current.average} /><DepartmentChart period={period} /></section>
+      <section className="analytics-grid"><VisitsChart data={current.visits} label={current.visitsLabel} average={current.average} /><DepartmentChart period={period} theme={theme} /></section>
       <section className="lower-grid">
-        <section className="surface appointments-card">
-          <div className="section-heading"><div><h2>{currentAppointments.title}</h2><p>{currentAppointments.subtitle}</p></div><button className="text-button" onClick={() => { setSearch(''); showToast(`Показаны все записи: ${currentAppointments.title.toLowerCase()}`) }}>Все записи</button></div>
-          <AppointmentsTable appointments={currentAppointments.items} onSelect={openAppointment} /><AppointmentMobileList appointments={currentAppointments.items} onSelect={openAppointment} />
+        <section className={`surface appointments-card ${appointmentsExpanded ? '' : 'is-collapsed'}`}>
+          <div className="section-heading"><div><h2>{currentAppointments.title}</h2><p>{currentAppointments.subtitle}</p></div><div className="section-actions"><button className="text-button" onClick={() => { setSearch(''); showToast(`Показаны все записи: ${currentAppointments.title.toLowerCase()}`) }}>Все записи</button><button className="collapse-button" onClick={() => setAppointmentsExpanded((value) => !value)} aria-expanded={appointmentsExpanded} aria-controls="appointments-content">{appointmentsExpanded ? <ChevronUp size={15} /> : <ChevronDown size={15} />}<span>{appointmentsExpanded ? 'Свернуть' : 'Развернуть'}</span></button></div></div>
+          <div className="appointments-collapse" id="appointments-content" aria-hidden={!appointmentsExpanded} inert={!appointmentsExpanded}><div><AppointmentsTable appointments={currentAppointments.items} onSelect={openAppointment} /><AppointmentMobileList appointments={currentAppointments.items} onSelect={openAppointment} /></div></div>
         </section>
         <div className="right-column">
           <DoctorsLoad period={period} />
