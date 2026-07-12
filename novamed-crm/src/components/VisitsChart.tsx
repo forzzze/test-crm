@@ -35,8 +35,8 @@ export function VisitsChart({ data, label }: { data: VisitPoint[]; label: string
       <ResponsiveContainer width="100%" height="100%">
         {mode === 'bars' ? <BarChart key={`bars-${label}`} data={data} margin={{ top: 17, right: 8, left: -24, bottom: 0 }} barCategoryGap="18%" accessibilityLayer={false}>
           {axes}
-          <Bar dataKey="value" radius={[6, 6, 2, 2]} maxBarSize={70} isAnimationActive={!reduceMotion} animationBegin={0} animationDuration={520} animationEasing="ease-out">
-            {data.map((point) => <Cell key={`${label}-${point.label}`} fill={point.value === maximum ? '#3568E8' : '#E3E7EC'} />)}
+          <Bar dataKey="value" radius={[10, 10, 5, 5]} maxBarSize={70} isAnimationActive={!reduceMotion} animationBegin={0} animationDuration={520} animationEasing="ease-out">
+            {data.map((point) => <Cell key={`${label}-${point.label}`} fill={point.value === maximum ? '#3568E8' : '#BCC5CD'} />)}
           </Bar>
         </BarChart> : <AreaChart key={`line-${label}`} data={data} margin={{ top: 17, right: 8, left: -24, bottom: 0 }} accessibilityLayer={false}>
           <defs><linearGradient id="visitsLineFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#3568E8" stopOpacity={0.18} /><stop offset="94%" stopColor="#3568E8" stopOpacity={0} /></linearGradient></defs>
