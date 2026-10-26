@@ -1,0 +1,57 @@
+name: Нейрон Палыч — контент-завод
+
+on:
+  schedule:
+    # 09:07, 14:07 и 20:07 по Москве
+    - cron: "7 6,11,17 * * *"
+  workflow_dispatch:
+    inputs:
+      command:
+        description: "Команда: tick | generate posts 6 | generate reels 2 | publish 1 | status"
+        default: "tick"
+      dry_run:
+        description: "Не публиковать в Telegram"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: neyron-palych
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ai-absurd-factory
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements.txt
+
+      - name: Автор → критик → публикация
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL: ${{ vars.TELEGRAM_CHANNEL }}
+          APPROVE_THRESHOLD: ${{ vars.APPROVE_THRESHOLD || '8' }}
+          CRITIC_VOTES: ${{ vars.CRITIC_VOTES || '2' }}
+          COMMAND: ${{ inputs.command || 'tick' }}
+          DRY_RUN: ${{ inputs.dry_run && '--dry-run' || '' }}
+        run: python -m factory.run $DRY_RUN $COMMAND
+
+      - name: Сохранить очередь и историю
+        if: always()
+        run: |
+          git config user.name "neyron-palych-bot"
+          git config user.email "neyron-palych-bot@users.noreply.github.com"
+          git add data
+          git diff --cached --quiet || git commit -m "Контент-завод: обновить очередь и историю"
+          git push

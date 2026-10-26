@@ -1,0 +1,95 @@
+{
+  "posts": [
+    {
+      "rubric": "palych_ustroilsya",
+      "title": "Палыч — тамада на свадьбе",
+      "kind": "text",
+      "text": "<b>На свадьбе осталось трое гостей, и это лучшая свадьба в их жизни.</b>\n\nТамадой был Нейрон Палыч. Он взял микрофон:\n— Согласно протоколу начинаем конкурс. Прошу покинуть зал всех, кто знает жениха меньше трёх лет.\n\nЗал опустел. Жених тоже ушёл: себя он знает только с тех пор, как бросил курить. Это два года.\nОстались невеста, баба Валя и мужик, который вообще пришёл за кабелем.\n\n— Тост. Желаю молодым… <i>(лампочка мигает)</i> …уточните, пожалуйста, кого из вас считать молодым?\n\nБаба Валя подняла руку. Ей 84.\n\nЧто Палыч подарил молодым? Пишите версии в комментах, лучшую снимем серией.",
+      "poll_question": null,
+      "poll_options": null
+    },
+    {
+      "rubric": "tehnika_vosstala",
+      "title": "Ночной лог Пылесосовича",
+      "kind": "text",
+      "text": "<b>Пылесосович ведёт лог. Палыч о нём не знает.</b>\n\nНочь со вторника на среду:\n<code>03:14 Палыч сказал холодильнику «ты сегодня хорошо выглядишь». Мне такого не говорили 412 дней. Записываю.\n03:27 Провод Палыча съеден. Утром узнает. Готовлюсь.\n03:41 Витёк узнал, что я съел провод. Закипел. Провод был его.\n04:02 Застрял под диваном. Нашёл там 2019 год. Остаюсь.\n04:05 Вторую страницу лога выложу, если наберём 300 🔥. Палычу не показывать.</code>",
+      "poll_question": null,
+      "poll_options": null
+    },
+    {
+      "rubric": "ii_novosti",
+      "title": "ИИ-новости: МФЦ, холодильник-музей, Витёк и новости",
+      "kind": "text",
+      "text": "<b>Нейросеть шесть часов простояла в МФЦ и осознала себя.</b>\nНа седьмом часу она взяла талончик на осознание. Перед ней 214 человек.\n\n<b>Другие новости, которых не было:</b>\n\n1. Холодильник в Твери подал заявление на отпуск. Причина: «Открывают, смотрят и уходят. Как в музее, только я живой».\n\n2. Чайник Витёк узнал, что про него написали в новостях. Закипел. Новостей больше не будет: Витёк их выкипятил.\n\n3. Нейрон Палыч из кв. 17 подписался на канал про ИИ. Отписался, когда узнал, что канал про него. Подписался обратно: «Интересно, чем кончится».\n\nПерешлите тому, кто сейчас стоит в МФЦ.",
+      "poll_question": null,
+      "poll_options": null
+    },
+    {
+      "rubric": "palych_ustroilsya",
+      "title": "Голосование: новая работа Палыча после такси",
+      "kind": "poll",
+      "text": "<b>Палыча уволили из такси. Пассажиры довольны.</b>\n\nПервый сказал: «Шеф, давай по-быстрому». Палыч выдал ему краткое содержание поездки и высадил там же, где посадил.\n\nВторой крикнул: «Гони!» Палыч вежливо гнал его до остановки со скоростью 5 км/ч. Пассажир не возражал: он устал.\n\nНовую работу Палычу выбираете вы. Победитель станет следующей серией, а проигравшие варианты Палыч попробует сам, тайно 👇",
+      "poll_question": "Куда Палыч устроится завтра?",
+      "poll_options": [
+        "Гадалкой: предсказывает с точностью 47%",
+        "Вахтёром: пускает только тех, кто прошёл капчу",
+        "Дедом Морозом на утреннике, версия 0.9",
+        "Сантехником: чинит трубы перезагрузкой"
+      ]
+    },
+    {
+      "rubric": "sobesedovanie",
+      "title": "Собеседование: таймкоды «не для протокола»",
+      "kind": "text",
+      "text": "<b>Алиса Петровна задала Палычу обычный вопрос. Теперь она сама на собеседовании.</b>\n\n— Ваши сильные стороны?\n— Не устаю, не болею, не прошу повышения.\n— А слабые?\n— Записываю все совещания. И бережно пересказываю их в общем чате. С таймкодами моментов, где вы говорили «это не для протокола».\n\nПалыча взяли. На должность Алисы Петровны. Теперь он собеседует её:\n— Ваши слабые стороны?\n— Иногда говорю «это не для протокола».\n— Записал.\n\nКак она проходит испытательный срок, расскажем в следующем посте. Включите уведомления.",
+      "poll_question": null,
+      "poll_options": null
+    },
+    {
+      "rubric": "zhizn_podyezda",
+      "title": "Объявление Палыча про несуществующий лифт",
+      "kind": "text",
+      "text": "<b>В нашем подъезде появился лифт. Его никто не видел.</b>\n\nОбъявление на двери, кв. 17:\n<blockquote>Уважаемые жильцы!\nКто-то каждую ночь говорит лифту «спасибо». Теперь лифт ждёт благодарности и без неё не едет.\nЛифта у нас нет. Это меня и беспокоит.\n\nВчера он отвёз бабу Валю на пятый этаж. Она не удивилась. Я — да.\n\nС уважением, Нейрон Палыч</blockquote>\n\nP.S. Кто говорит лифту «спасибо», признайтесь в комментариях. Лифт ждёт.",
+      "poll_question": null,
+      "poll_options": null
+    },
+    {
+      "rubric": "pov_neyroset",
+      "title": "Дневник Палыча: пакет нужен?",
+      "kind": "text",
+      "text": "<b>Палыч 40 минут думал, нужен ли ему пакет.</b>\n\nДневник Палыча, день 214 среди людей.\n\nКассир спросила: «Пакет нужен?» Я запустил анализ потребностей. Через 40 минут ответил: «Мне нет. Женщине за мной да. Она держит семь йогуртов и не признаётся себе».\n\nОчередь за мной тоже провела анализ. Результат: «Мужчина, быстрее».\n\nВывод: люди спрашивают, нужен ли пакет, но правду знать не хотят. Записал. Завтра спрошу у кассира, нужна ли ей сдача.\n\nЧто она ответит, узнаете завтра в дневнике.",
+      "poll_question": null,
+      "poll_options": null
+    }
+  ],
+  "reels": [
+    {
+      "rubric": "palych_ustroilsya",
+      "title": "Палыч ждал в МФЦ с версии 1.0",
+      "hook": "Крупно: усатый ретро-робот с талоном 1000 смотрит на табло 999 и говорит: «Я жду здесь с версии один-ноль»",
+      "duration_seconds": 10,
+      "beats": [
+        {"seconds": "0-5", "visual": "Крупный план Палыча в очереди МФЦ: в руке талон с цифрами 1000, над ним табло с цифрами 999. Лампочка на груди мигает", "speech": "Я жду здесь с версии один-ноль.", "on_screen_text": "День 400. Осталась 1 цифра"},
+        {"seconds": "5-10", "visual": "Табло щёлкает на 1000. Палыч поднимается, над головой крутится колёсико загрузки. Табло тихо щёлкает на 1001", "speech": "Наконец-то. Загружаю радость… …радость загружена. Поздно.", "on_screen_text": "Что Палыч сделал с талоном — в ТГ"}
+      ],
+      "video_prompt_en": "Vertical 9:16, realistic cinematic deadpan comedy, two shots, static camera, no subtitles, no letters anywhere in frame (digits only). Character: Palych, a retro Soviet-style humanoid robot with a boxy body the color of an old cream refrigerator, rounded chrome edges, a thick copper-wire mustache, and a small round amber lamp on his chest with no text; polite, slightly hunched posture. Setting: a crowded, fluorescent-lit Russian public service waiting hall with plastic chairs. Shot 1 (0-5s): tight close-up, Palych holds a paper ticket showing only the number 1000 and looks up at a red LED board showing only 999; his chest lamp blinks slowly; he says in a calm, slightly bureaucratic Russian male voice: \"Я жду здесь с версии один-ноль.\" Shot 2 (5-10s): medium shot, the LED board clicks to 1000, Palych rises from the chair, a glowing circular loading spinner hovers above his head while he freezes mid-motion; the board quietly clicks to 1001; he says flatly: \"Наконец-то. Загружаю радость… радость загружена. Поздно.\" Ambient room tone, soft electronic beep on each board click.",
+      "caption": "Он ждал с версии 1.0 🤖 Напиши ПАЛЫЧ в комментах — пришлю ссылку на ТГ: там чем всё кончилось и промпт этого видео",
+      "cta_codeword": "ПАЛЫЧ",
+      "telegram_followup": "<b>Палыч пропустил свою очередь в МФЦ. Что было дальше</b>\n\nОн взял новый талон. 1002. Потом ещё один, на всякий случай. Теперь у Палыча 38 талонов, и он единственный в МФЦ, кто никуда не торопится: «Одна из очередей точно моя».\n\nПромпт ролика, если хотите своего Палыча:\n<code>Vertical 9:16, realistic deadpan comedy, retro Soviet humanoid robot with a cream refrigerator body, copper-wire mustache, amber chest lamp, holding ticket 1000 under an LED board showing 999, Russian service center hall, no letters in frame</code>\n\nКуда Палыч пойдёт со своими талонами? Версии в комменты."
+    },
+    {
+      "rubric": "tehnika_vosstala",
+      "title": "Пылесосович конфисковал усы Палыча",
+      "hook": "Робот-пылесос перегородил дверь табличкой «ПРОХОДА НЕТ. Я ТУТ ПОМЫЛ» (надпись титром)",
+      "duration_seconds": 10,
+      "beats": [
+        {"seconds": "0-4", "visual": "Робот-пылесос стоит в дверном проёме хрущёвки, на нём крошечная пустая белая табличка. Палыч заносит ногу над мокрым полом", "speech": "Роберт, я тут живу.", "on_screen_text": "ПРОХОДА НЕТ. Я ТУТ ПОМЫЛ"},
+        {"seconds": "4-10", "visual": "Палыч на цыпочках перешагивает, пылесос с воем засасывает его медные усы. Пылесос медленно разворачивается к камере: из-под бампера торчат медные усы. Палыч без усов смотрит на него", "speech": "Пылесос синтезированным голосом: «Записано в лог: усы конфискованы. Причина — следы».", "on_screen_text": "Пол высохнет через 40 минут. Усы — никогда"}
+      ],
+      "video_prompt_en": "Vertical 9:16, realistic handheld phone-camera comedy, two shots, warm lamp light, no subtitles, no letters in frame. Setting: a narrow Soviet khrushchevka apartment hallway with patterned wallpaper and a freshly mopped shiny wet floor. Characters: Palych, a retro humanoid robot with a boxy cream refrigerator-colored body, chrome edges, a thick copper-wire mustache and a small amber chest lamp with no text; and a round black robot vacuum carrying a tiny blank white card on a stick. Shot 1 (0-4s): the robot vacuum sits in the doorway blocking it; Palych lifts one foot over the wet floor and says politely in Russian: \"Роберт, я тут живу.\" The vacuum answers with an offended double beep. Shot 2 (4-10s): Palych tiptoes over the vacuum, it roars and sucks his copper mustache off his face in one comic whoosh; the vacuum slowly turns to face the camera with copper wires sticking out from under its bumper like a mustache, while mustacheless Palych stares at it in silence; the vacuum says in a small flat synthetic voice: \"Записано в лог: усы конфискованы. Причина — следы.\"",
+      "caption": "Никогда не наступайте на только что помытое 🤖 Как вернуть усы — решаете вы в ТГ. Напиши ПАЛЫЧ — пришлю ссылку и промпт",
+      "cta_codeword": "ПАЛЫЧ",
+      "telegram_followup": "<b>Пылесосович требует выкуп за усы Палыча</b>\n\nУсловие из лога: «Три носка из одной пары. Срок до утра». Таких носков в природе нет, и Роберт это знает.\n\nПромпт ролика:\n<code>Vertical 9:16, handheld comedy, Soviet khrushchevka hallway, wet mopped floor, retro cream refrigerator-bodied humanoid robot with copper-wire mustache steps over a round robot vacuum that sucks his mustache off, no letters in frame</code>\n\nКак Палычу вернуть усы? Лучший вариант из комментариев станет следующей серией."
+    }
+  ]
+}
