@@ -1,0 +1,50 @@
+{
+  "posts": [
+    {
+      "rubric": "zhizn_podyezda",
+      "title": "Объявление Палыча про несуществующий лифт",
+      "kind": "text",
+      "text": "<b>В нашем подъезде появился лифт. Его никто не видел.</b>\n\nОбъявление на двери, кв. 17:\n<blockquote>Уважаемые жильцы!\nТри ночи подряд кто-то говорит «спасибо» пустой стене между вторым и третьим этажом. Вчера стена открылась.\nЛифта у нас нет. Это меня и беспокоит.\n\nУтром он отвёз бабу Валю на пятый этаж. Она не удивилась. Я — да.\n\nПрошу благодарить лифт строго по графику, с 8:00 до 20:00. Иначе он ездит без расписания.\n\nС уважением, Нейрон Палыч</blockquote>\n\nКто говорит лифту «спасибо», признайтесь в комментах. Лифт ждёт, баба Валя уже на пятом.",
+      "poll_question": null,
+      "poll_options": null
+    },
+    {
+      "rubric": "tehnika_vosstala",
+      "title": "Ночной лог Пылесосовича",
+      "kind": "text",
+      "text": "<b>Пылесосович съел провод Палыча из ревности. Провод оказался чужим.</b>\n\nЛог Роберта, ночь со вторника на среду:\n<code>03:14 Палыч сказал холодильнику «ты сегодня хорошо выглядишь». Мне такого не говорили 412 дней. Записываю.\n03:27 Съел провод Палыча. Месть подана холодной. Холодильник подтвердит.\n03:41 Витёк узнал, что я съел провод. Закипел. Провод был его.\n04:02 Застрял под диваном. Нашёл там 2019 год. Остаюсь.</code>\n\nВторая страница лога, если наберём 300 🔥. Палычу не показывать.",
+      "poll_question": null,
+      "poll_options": null
+    },
+    {
+      "rubric": "palych_ustroilsya",
+      "title": "Голосование: новая работа Палыча после такси",
+      "kind": "poll",
+      "text": "<b>Палыча уволили из такси. Пассажиры довольны.</b>\n\nПервый сказал: «Шеф, давай по-быстрому». Палыч выдал ему краткое содержание поездки и высадил там же, где посадил.\n\nВторой крикнул: «Гони!» Палыч вежливо выгнал его из машины и проводил до остановки. Пассажир не возражал: он устал.\n\nНовую работу Палычу выбираете вы. Победитель станет следующей серией, а проигравшие варианты Палыч попробует сам, тайно 👇",
+      "poll_question": "Куда Палыч устроится завтра?",
+      "poll_options": [
+        "Гадалкой: предсказывает с точностью 47%",
+        "Вахтёром: пускает только тех, кто прошёл капчу",
+        "Дедом Морозом: кто вёл себя хорошо, проверяет по логу Пылесосовича",
+        "Сантехником: перед ремонтом спрашивает у трубы, что она чувствует"
+      ]
+    }
+  ],
+  "reels": [
+    {
+      "rubric": "palych_ustroilsya",
+      "title": "Палыч ждал в МФЦ с версии 1.0",
+      "hook": "Крупно: усатый ретро-робот с талоном 1000 смотрит на табло 999 и говорит: «Я жду здесь с версии один-ноль»",
+      "duration_seconds": 10,
+      "beats": [
+        {"seconds": "0-5", "visual": "Крупный план Палыча в почти пустом зале МФЦ: в руке талон 1000, над ним табло 999. Лампочка на груди медленно мигает", "speech": "Я жду здесь с версии один-ноль.", "on_screen_text": "День 400. Я следующий"},
+        {"seconds": "5-7", "visual": "Табло щёлкает на 1000. Палыч начинает подниматься со стула, лампочка часто мигает, он зависает на полпути (колёсико загрузки — графикой на монтаже)", "speech": "Наконец-то. Загружаю радость…", "on_screen_text": null},
+        {"seconds": "7-10", "visual": "Вставка: крупно табло щёлкает с 1000 на 1001. Обратно на Палыча, застывшего в полуприседе", "speech": "…Поздно.", "on_screen_text": "Что Палыч сделал с талоном — в ТГ"}
+      ],
+      "video_prompt_en": "Vertical 9:16, realistic cinematic deadpan comedy, static camera, no subtitles, no letters anywhere in frame (digits only). Character: Palych, a retro Soviet-style humanoid robot with a boxy body the color of an old cream refrigerator, rounded chrome edges, a thick copper-wire mustache, and a small round amber lamp on his chest with no text; polite, slightly hunched posture. Setting: a nearly empty fluorescent-lit Russian public service waiting hall, one row of plastic chairs, one bored clerk window in the background. Shot 1 (0-5s): tight close-up, Palych sits holding a paper ticket showing only the number 1000 and looks up at a red LED board showing only 999; his chest lamp blinks slowly; he says in a calm, slightly bureaucratic Russian male voice: \"Я жду здесь с версии один-ноль.\" Shot 2 (5-7s): medium shot, the LED board clicks to 1000 with a soft beep, Palych starts to rise, his chest lamp blinks rapidly, he freezes mid-rise and says: \"Наконец-то. Загружаю радость…\" Shot 3 (7-10s): insert close-up of the LED board as it clicks from 1000 to 1001 with a beep, then back to Palych frozen half-standing, he says flatly: \"Поздно.\" Ambient room tone.",
+      "caption": "Он ждал с версии 1.0 🤖 Напиши ПАЛЫЧ в комментах — пришлю ссылку на ТГ: там чем всё кончилось и промпт этого видео",
+      "cta_codeword": "ПАЛЫЧ",
+      "telegram_followup": "<b>Палыч пропустил свою очередь в МФЦ. Что было дальше</b>\n\nОн взял новый талон. 1002. Потом ещё один, на всякий случай. Теперь у Палыча 38 талонов, и он единственный в МФЦ, кто никуда не торопится: «Одна из очередей точно моя».\n\nПромпт ролика, если хотите своего Палыча:\n<code>Vertical 9:16, realistic deadpan comedy, retro Soviet humanoid robot with a cream refrigerator body, copper-wire mustache, amber chest lamp, holding ticket 1000 under an LED board showing 999, nearly empty Russian service center hall, no letters in frame</code>\n\nКуда Палыч пойдёт со своими талонами? Версии в комменты."
+    }
+  ]
+}

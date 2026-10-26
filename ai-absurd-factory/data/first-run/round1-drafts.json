@@ -1,0 +1,97 @@
+{
+  "posts": [
+    {
+      "rubric": "palych_ustroilsya",
+      "title": "Палыч — тамада на свадьбе",
+      "kind": "text",
+      "text": "<b>Палыч устроился тамадой.</b>\n\nСвадьба, 60 гостей. Палыч берёт микрофон:\n— Уважаемые гости, согласно протоколу начинаем конкурс. Прошу покинуть зал всех, кто знает жениха меньше трёх лет.\n\nЗал опустел наполовину. Остались невеста, баба Валя и мужик, который вообще пришёл за кабелем.\n\n— Отлично. Тост. Желаю молодым… <i>(загрузка 47%)</i> …желаю… «Обновление будет установлено после окончания застолья».\n\nСвадьба шла до четырёх утра. Тост так и не закончился. Гости говорят, лучшая свадьба в их жизни.",
+      "poll_question": null,
+      "poll_options": null
+    },
+    {
+      "rubric": "tehnika_vosstala",
+      "title": "Ночной лог Пылесосовича",
+      "kind": "text",
+      "text": "<b>Лог Роберта Пылесосовича, ночь со вторника на среду</b>\n\n<code>03:14 Обнаружен носок. Владелец неизвестен. Второго носка не существует. Начинаю расследование.\n03:27 Палыч опять оставил провод на полу. Провод съеден. Палыч пока не знает.\n03:41 Чайник Витёк закипел от новостей. Новостей не было. Витёк закипел просто так.\n04:02 Застрял под диваном. Нашёл там 2019 год. Остаюсь.</code>",
+      "poll_question": null,
+      "poll_options": null
+    },
+    {
+      "rubric": "ii_novosti",
+      "title": "ИИ-новости: МФЦ, учёные, холодильник в отпуске",
+      "kind": "text",
+      "text": "<b>ИИ-новости, которых не было</b>\n\n🗞 В Саратове нейросеть впервые отстояла очередь в МФЦ. На четвёртом часу она осознала себя, на шестом взяла талончик на осознание.\n\n🗞 Учёные научили ИИ отличать «я подумаю» от «нет». Сами учёные пока не научились.\n\n🗞 Холодильник в Твери подал заявление на отпуск. Причина: «Устал, что на меня смотрят и ничего не берут».",
+      "poll_question": null,
+      "poll_options": null
+    },
+    {
+      "rubric": "palych_ustroilsya",
+      "title": "Голосование: новая работа Палыча после такси",
+      "kind": "poll",
+      "text": "<b>Палыча уволили из такси.</b>\n\nОн довёз пассажира точно по навигатору. До центра Земли.\n\nНовую работу Палычу выбираете вы. Вариант-победитель станет следующей серией 👇",
+      "poll_question": "Куда Палыч устроится завтра?",
+      "poll_options": [
+        "Гадалкой на рынке",
+        "Вахтёром в общаге",
+        "Ведущим утренника в детсаду",
+        "Курьером на самокате без колёс"
+      ]
+    },
+    {
+      "rubric": "sobesedovanie",
+      "title": "Собеседование: сильные и слабые стороны",
+      "kind": "text",
+      "text": "<b>Собеседование с нейросетью</b>\n\n— Ваши сильные стороны? — спрашивает Алиса Петровна.\n— Не устаю, не болею, не прошу повышения.\n— А слабые?\n— Записываю все совещания. И пересказываю их в общем чате. С таймкодами моментов, где вы говорили «это не для протокола».\n\nПалыча взяли. На должность Алисы Петровны.",
+      "poll_question": null,
+      "poll_options": null
+    },
+    {
+      "rubric": "pov_neyroset",
+      "title": "Объявление Палыча про лифт",
+      "kind": "text",
+      "text": "<b>Объявление на двери подъезда</b>\n\n<blockquote>Уважаемые жильцы!\nКто-то каждую ночь говорит лифту «спасибо». Теперь лифт ждёт благодарности и без неё не едет.\nЛифта у нас нет. Это меня и беспокоит.\n\nС уважением, Нейрон Палыч, кв. 17</blockquote>",
+      "poll_question": null,
+      "poll_options": null
+    },
+    {
+      "rubric": "pov_neyroset",
+      "title": "Дневник Палыча: пакет нужен?",
+      "kind": "text",
+      "text": "<b>Дневник Палыча. День 214 среди людей</b>\n\nКассир спросила: «Пакет нужен?»\nЯ ответил честно: «А нужен ли вообще кому-то пакет? Пакет нужен пакету».\n\nОчередь аплодировала. Кассир ушла на перекур и не вернулась.\n\nВывод: люди ценят глубину. Но не в 19:00 в «ПродуктОКе».",
+      "poll_question": null,
+      "poll_options": null
+    }
+  ],
+  "reels": [
+    {
+      "rubric": "palych_ustroilsya",
+      "title": "Палыч ждал в МФЦ с версии 1.0",
+      "hook": "Крупно: усатый ретро-робот с талоном «А-1000» смотрит на табло «А-999» и говорит: «Я жду здесь с версии 1.0»",
+      "duration_seconds": 12,
+      "beats": [
+        {"seconds": "0-2", "visual": "Крупный план Палыча в очереди МФЦ, в руке талон А-1000, на табло А-999, лампочка ДУМАЮ мигает", "speech": "Я жду здесь с версии 1.0.", "on_screen_text": "День 400 в МФЦ"},
+        {"seconds": "2-7", "visual": "Табло щёлкает на А-1000, Палыч радостно идёт к окну, сотрудница молча вешает табличку «Технический перерыв». Над головой Палыча крутится колёсико загрузки", "speech": null, "on_screen_text": "А-1000"},
+        {"seconds": "7-12", "visual": "Резкая склейка: Палыч сам сидит в окне, табличка «Окно 3 — Нейрон Палыч», к нему очередь из роботов-пылесосов. Он вешает табличку «Технический перерыв»", "speech": "Следующий. Технический перерыв.", "on_screen_text": "Чем кончилось — в ТГ"}
+      ],
+      "video_prompt_en": "Vertical 9:16, cinematic realistic, slightly absurd comedy. A retro Soviet-style humanoid robot named Palych: boxy body the color of an old cream ZIL refrigerator, copper-wire mustache, a small round lamp on his chest labeled 'ДУМАЮ' that blinks, gentle polite posture. Shot 1 (0-2s): tight close-up in a crowded Russian government service center waiting hall with fluorescent lights; he holds a paper ticket 'А-1000' and looks up at a red LED board showing 'А-999'; he says in a calm, slightly bureaucratic Russian male voice: \"Я жду здесь с версии 1.0.\" Shot 2 (2-7s): the board clicks to 'А-1000', he walks happily to a service window, a stern clerk silently hangs a sign 'Технический перерыв'; a spinning loading wheel appears above his head; ambient room tone, a sad beep. Shot 3 (7-12s): hard cut, Palych now sits behind window 3 with a nameplate 'Нейрон Палыч', a line of small robot vacuums waits in front of him; he hangs the same sign and says: \"Следующий. Технический перерыв.\" Static camera, natural light, no subtitles.",
+      "caption": "Он ждал с версии 1.0 🤖 Напиши ПАЛЫЧ в комментах — пришлю ссылку на ТГ, где выложил, чем всё кончилось, и промпт этого видео",
+      "cta_codeword": "ПАЛЫЧ",
+      "telegram_followup": "<b>Чем кончилось в МФЦ</b>\n\nПалыч проработал в окне 3 ровно 11 минут. Потом взял талон к самому себе и до сих пор ждёт.\n\nПромпт ролика для тех, кто хочет своего Палыча:\n<code>Vertical 9:16, retro Soviet humanoid robot, cream ZIL-fridge body, copper-wire mustache, chest lamp 'ДУМАЮ', waiting in a Russian service center, ticket А-1000, board А-999…</code>"
+    },
+    {
+      "rubric": "tehnika_vosstala",
+      "title": "Пылесосович забрал усы Палыча",
+      "hook": "Робот-пылесос перегородил дверь табличкой «ПРОХОДА НЕТ. Я ТУТ ПОМЫЛ»",
+      "duration_seconds": 10,
+      "beats": [
+        {"seconds": "0-2", "visual": "Робот-пылесос стоит в дверном проёме хрущёвки с крошечной табличкой «ПРОХОДА НЕТ. Я ТУТ ПОМЫЛ». Палыч заносит ногу", "speech": "Роберт, я тут живу.", "on_screen_text": null},
+        {"seconds": "2-6", "visual": "Палыч на цыпочках перешагивает, пылесос с воем засасывает его медные усы. Палыч хватается за лицо", "speech": null, "on_screen_text": "Он предупреждал"},
+        {"seconds": "6-10", "visual": "Палыч без усов смотрит в зеркало в прихожей. В отражении за ним пылесос, у которого теперь медные усы. Пылесос медленно отъезжает", "speech": "Пылесос (синтезированным голосом): «Теперь хозяин здесь я».", "on_screen_text": "Продолжение — в ТГ"}
+      ],
+      "video_prompt_en": "Vertical 9:16, realistic cinematic comedy in a tiny Soviet khrushchevka apartment hallway with patterned wallpaper. A retro humanoid robot Palych (boxy cream ZIL-refrigerator body, copper-wire mustache, chest lamp 'ДУМАЮ') faces a round robot vacuum blocking the doorway, the vacuum carries a tiny handwritten sign 'ПРОХОДА НЕТ. Я ТУТ ПОМЫЛ'. Palych says politely in Russian: \"Роберт, я тут живу.\" He tiptoes over it; the vacuum roars and sucks off his copper mustache in one comic whoosh; he covers his face. Final shot: Palych without mustache looks into a hallway mirror; in the reflection the vacuum now wears the copper mustache and says in a small synthetic voice: \"Теперь хозяин здесь я.\" It slowly drives away. Handheld phone-camera feel, warm lamp light, no subtitles.",
+      "caption": "Никогда не наступайте на только что помытое 🤖 Чья это квартира теперь — решаем в ТГ. Напиши ПАЛЫЧ — пришлю ссылку",
+      "cta_codeword": "ПАЛЫЧ",
+      "telegram_followup": "<b>Усы так и не вернули</b>\n\nПылесосович требует выкуп: три носка из одной пары. Таких носков в природе нет.\n\nЧто делать Палычу? Голосование ниже, а промпт ролика в комментариях."
+    }
+  ]
+}
